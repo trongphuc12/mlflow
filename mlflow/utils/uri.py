@@ -296,6 +296,7 @@ def append_to_uri_path(uri, *paths):
 
     new_uri_path = _join_posixpaths_and_append_absolute_suffixes(parsed_uri.path, path)
     new_parsed_uri = parsed_uri._replace(path=new_uri_path)
+    new_parsed_uri = parsed_uri._replace(fragment="")
     return prefix + urllib.parse.urlunparse(new_parsed_uri)
 
 
